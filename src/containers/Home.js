@@ -1,15 +1,26 @@
 import React, { Component } from 'react';
+import ajax from './../api/ajax';
+import HomeView from './../components/HomeView';
 
-class Template extends Component{
+class Home extends Component{
+
+    state = {
+        loadingCategories : true, 
+        categories: []
+    }
+    async componentWillMount () {
+        const categories = await ajax.fetchAllCategories();
+        this.setState({
+            loadingCategories: false,
+            categories: categories
+        });
+    }
+
     render(){
         return(
-            <div> 
-              
-                    <h1>Home</h1>
-             
-            </div>
+           <HomeView />
         );
     }
 }
 
-export default Template;
+export default Home;

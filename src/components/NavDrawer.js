@@ -25,7 +25,7 @@ function Category(props){
 }
 class NavDrawer extends Component{
     state={
-        open:true,
+        open:false,
         width: 250,
         categories: [],
         loadingCategories: true,
