@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
 import ajax from './../api/ajax';
 import {Link} from 'react-router';
-import WebFont from 'webfontloader'
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import WebFont from 'webfontloader';
+import styled from 'styled-components';
+import {Card, CardMedia, CardTitle} from 'material-ui/Card';
 
 WebFont.load({
     google: {
@@ -18,7 +19,7 @@ function Category(props){
                         <CardMedia>
                             <img src={require('./../assets/images/'+ props.category.name+'.png')} alt={props.category.name} />     
                         </CardMedia>
-                        <CardTitle title={props.category.name}></CardTitle>
+                        <CardTitle subtitle={props.category.name}></CardTitle>
                      </Card>
               </Link>);
 }
